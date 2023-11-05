@@ -1,53 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO LIST</title>
-    <link rel="stylesheet" href="./css/-.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <title>TODO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="-.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <div class="background">
-        <div class="container-principal">
-            <h1>Lista de Afazeres</h1>
-            <div class="acoes">
-                <div class="adicionar">
-                    <h2>Adicionar:</h2>
-                    <form id="form-adicionar">
-                        <input type="text" name="" id="input-adicionar" class="input"
-                            placeholder="Escreva sua tarefa...">
-                        <button class="button" id="btn-adicionar" onclick="Adicionar()" type="button">Adicionar</button>
-                    </form>
-                </div>
-                <hr>
-                <div class="procurar">
-                    <h2>Procurar:</h2>
-                    <form id="form-procurar">
-                        <input type="text" class="input" id="input-procurar" placeholder="Procure aqui...">
-                        <button class="button" id="btn-procurar">Procurar</button>
-                    </form>
-                </div>
-            </div>
-            <div class="todolist" id="todolist">
-                <h2>Lista de Afazeres:</h2>
-                <ul id="tarefas-ul">
-                    <div class="tarefa" id="div-tarefa">
-                        <div class="tarefa-texto">
-                            <p>Texto da tarefa</p>
-                        </div>
-                        <div class="tarefa-acoes">
-                            <button class="button">Editar</button>
-                            <button class="button">Excluir</button>
-                        </div>
+        <div class="C-1">
+            <div class="inputs-C">
+                <h1>Lista de Tarefas</h1>
+                <div class="inputs">
+                    <div class="adicionar">
+                        <input type="text" class="input-texto" name="textoinput" id="textoinput"
+                            placeholder="Digite sua tarefa aqui...">
+                        <button type="button" class="btn" onclick="Adicionar()">Adicionar</button>
                     </div>
-                </ul>
+                    <hr>
+                    <div class="pesquisar">
+                        <input type="text" class="input-texto" name="" id="pesquisarinput"
+                            placeholder="Digite aqui para pesquisar...">
+                        <button type="button" class="btn" onclick="Pesquisar()">Pesquisar</button>
+                    </div>
+                </div>
             </div>
-        </div> <!-- Container Principal -->
-    </div> <!-- Background -->
-    <script src="./script/script.js"></script>
+            <div class="hr">
+                <hr>
+            </div>
+            <div class="filtros">
+                <button onclick="FiltrarConcluidas()" class="btn" type="button">Mostrar tarefas concluídas</button>
+                <hr>
+                <button onclick="MostrarTodas()" class="btn" type="button">Mostrar todas as tarefas</button>
+                <hr>
+                <button onclick="FiltrarNaoConcluidas()" class="btn" type="button">Mostrar tarefas não
+                    concluídas</button>
+            </div>
+            <div class="hr">
+                <hr>
+            </div>
+            <div class="outputs">
+                <h1>Tarefas</h1>
+                <div id="todolist">
+                    <ul id="todoul">
+                        <!-- <li id="todo-x" class="todoli">
+                            <input type="checkbox" name="feito" id="feito">
+                            <div class="p-todo">
+                                <p>TODO</p>
+                            </div>
+                            <button type="button" class="btn">Editar</button>
+                            <button type="button" class="btn">Excluir</button>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
