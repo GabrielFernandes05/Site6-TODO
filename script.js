@@ -46,7 +46,6 @@ function Pesquisar() {
     let termoDePesquisa = document.getElementById('pesquisarinput').value.toLowerCase();
     let input = document.getElementById('pesquisarinput');
     let tarefas = document.getElementsByClassName('todoli');
-
     for (let i = 0; i < tarefas.length; i++) {
         let tarefa = tarefas[i].getElementsByTagName('p')[0];
         if (tarefa) {
@@ -63,10 +62,9 @@ function Pesquisar() {
 
 function FiltrarConcluidas() {
     let tarefas = document.getElementsByClassName('todoli');
-
     for (let i = 0; i < tarefas.length; i++) {
-        let checkbox = tarefas[i].getElementsByTagName('input')[0];
-        if (checkbox.checked) {
+        let p = tarefas[i].querySelector('.p-todo p');
+        if (p.style.textDecoration === "line-through") {
             tarefas[i].style.display = "";
         } else {
             tarefas[i].style.display = "none";
@@ -76,20 +74,42 @@ function FiltrarConcluidas() {
 
 function FiltrarNaoConcluidas() {
     let tarefas = document.getElementsByClassName('todoli');
-
     for (let i = 0; i < tarefas.length; i++) {
-        let checkbox = tarefas[i].getElementsByTagName('input')[0];
-        if (!checkbox.checked) {
-            tarefas[i].style.display = "";
-        } else {
+        let p = tarefas[i].querySelector('.p-todo p');
+        if (p.style.textDecoration === "line-through") {
             tarefas[i].style.display = "none";
+        } else {
+            tarefas[i].style.display = "";
         }
     }
 }
 
+// function FiltrarConcluidas() {
+//     let tarefas = document.getElementsByClassName('todoli');
+//     for (let i = 0; i < tarefas.length; i++) {
+//         let checkbox = tarefas[i].getElementsByTagName('input')[0];
+//         if (checkbox.checked) {
+//             tarefas[i].style.display = "";
+//         } else {
+//             tarefas[i].style.display = "none";
+//         }
+//     }
+// }
+
+// function FiltrarNaoConcluidas() {
+//     let tarefas = document.getElementsByClassName('todoli');
+//     for (let i = 0; i < tarefas.length; i++) {
+//         let checkbox = tarefas[i].getElementsByTagName('input')[0];
+//         if (!checkbox.checked) {
+//             tarefas[i].style.display = "";
+//         } else {
+//             tarefas[i].style.display = "none";
+//         }
+//     }
+// }
+
 function MostrarTodas() {
     let tarefas = document.getElementsByClassName('todoli');
-
     for (let i = 0; i < tarefas.length; i++) {
         tarefas[i].style.display = "";
     }

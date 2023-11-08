@@ -90,6 +90,14 @@ hr{
     padding: 4%;
     background-color: rgb(255, 50, 90);
     color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    transition: 0.3s;
+    scale: 1.01;
+    background-color: rgb(245, 40, 80);
 }
 
 .filtros{
